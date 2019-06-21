@@ -2,80 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f0ea5d3-3c0f-4f4c-9303-491f3dc65176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b1d139149ccf907377b1e979d7ae2735667ac7e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d4dc97802e88e6b2ae423d19be26099e6549b8a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2dfe4fd0d6dffcc8de416704b174de5a6a3c69a5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e844fc68f0e4902ab0ca11999edd5111d86b32" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63f305422b14b99c4411f9f7a02b799932d2fbea" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72035cb04455566f9e621816b41a36fd03ccbaae" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85a2341541926416d7d96b542017157f4c0b1105" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b8cc111d897177804304ef55927d7d30fd5e3c0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3887477b407087f3375db6caa43b4b6fc703425" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed4bd442bdc37dc8d9141aeb97245e61ae4546f2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pharmacy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MainCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/ExcelDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/H2Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/MainDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/SqlDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/mapper/DatabaseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/MainTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ExcelDatabase.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/b2b/aurzecki/pharmacy/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ExcelDatabase.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/Pharmacy.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/H2Creator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/MainCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/ExcelDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/H2Database.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/MainDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/SqlDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/gui/IdWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/mapper/DatabaseMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/utils/MainTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/pl/b2b/aurzecki/pharmacy/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -275,7 +202,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="50" />
     <option name="y" value="161" />
     <option name="width" value="1870" />
@@ -480,7 +407,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="255" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="184" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560968254158" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560968569694" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/B2B" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -582,7 +509,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -608,7 +535,7 @@
       <window_info anchor="bottom" id="SQL" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32719547" />
       <window_info anchor="bottom" id="Console" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -655,6 +582,37 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="MATCH_CASE" value="true" />
+                </TextFilterSettings>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain.java" />
