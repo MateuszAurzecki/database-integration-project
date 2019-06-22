@@ -1,7 +1,5 @@
 package pl.b2b.aurzecki.pharmacy.gui;
 
-import org.apache.log4j.Logger;
-import pl.b2b.aurzecki.pharmacy.App;
 import pl.b2b.aurzecki.pharmacy.creator.H2Creator;
 import pl.b2b.aurzecki.pharmacy.creator.MySqlCreator;
 import pl.b2b.aurzecki.pharmacy.table.ShowExcelTable;
@@ -16,7 +14,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class PharmacyGui extends JFrame implements ActionListener {
 
@@ -140,7 +137,7 @@ public class PharmacyGui extends JFrame implements ActionListener {
         bShowH2Database.addActionListener(e -> {
             try {
                 ShowH2Table.getGui(H2Creator.DB_URL, H2Creator.USER, H2Creator.PASS);
-            } catch (IllegalAccessException | InstantiationException | ClassNotFoundException e1) {
+            } catch (ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
         });
@@ -190,7 +187,7 @@ public class PharmacyGui extends JFrame implements ActionListener {
         bAddH2ToMainDatabase.addActionListener(e -> {
             try {
                 addDatabaseToMedicine.addH2ToMedicine();
-            } catch (ClassNotFoundException  e1) {
+            } catch (ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
         });
@@ -224,12 +221,7 @@ public class PharmacyGui extends JFrame implements ActionListener {
         bDeleteMain.setBounds(10, 600, 285, 40);
         add(bDeleteMain);
         bDeleteMain.addActionListener(e -> {
-
-            try {
-                mainTable.deleteAllFromMainDatabase();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+            mainTable.deleteAllFromMainDatabase();
         });
 
 
@@ -260,11 +252,10 @@ public class PharmacyGui extends JFrame implements ActionListener {
             String dbUrl = tDbUrl.getText();
             String dbLogin = tLogin.getText();
             String dbPass = tPassword.getText();
-            String excelPath = tExcelFile.getText();
             if (dbDriver.equals("org.h2.Driver")) {
                 try {
                     ShowH2Table.getGui(dbUrl, dbLogin, dbPass);
-                } catch (IllegalAccessException | InstantiationException | ClassNotFoundException e1) {
+                } catch (ClassNotFoundException e1) {
                     e1.printStackTrace();
                 }
 

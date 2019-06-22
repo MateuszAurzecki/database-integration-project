@@ -10,7 +10,7 @@ import java.util.List;
 public class ShowH2Table extends JPanel {
 
 
-    private ShowH2Table(String dbUrl, String dbLogin, String dbPass) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    private ShowH2Table(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
         super(new GridLayout(1, 0));
 
         String[] columnNames = {"identyfikator",
@@ -18,7 +18,7 @@ public class ShowH2Table extends JPanel {
                 "min"};
 
         H2Creator h2Creator = new H2Creator();
-        List<H2Database> h2Database = h2Creator.getH2Database(dbUrl,dbLogin,dbPass);
+        List<H2Database> h2Database = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
 
 
         Object[][] database = new Object[h2Database.size()][3];
@@ -33,7 +33,6 @@ public class ShowH2Table extends JPanel {
         table.setPreferredScrollableViewportSize(new Dimension(1280, 720));
         table.setFillsViewportHeight(true);
 
-
         //Create the scroll pane and add the table to it.
         JScrollPane scrollPane = new JScrollPane(table);
 
@@ -42,13 +41,13 @@ public class ShowH2Table extends JPanel {
     }
 
 
-    private static void createAndShowGUI(String dbUrl, String dbLogin, String dbPass) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    private static void createAndShowGUI(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
         //Create and set up the window.
         JFrame frame = new JFrame("Show H2 Table");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         //Create and set up the content pane.
-        ShowH2Table newContentPane = new ShowH2Table(dbUrl,dbLogin,dbPass);
+        ShowH2Table newContentPane = new ShowH2Table(dbUrl, dbLogin, dbPass);
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
 
@@ -57,8 +56,8 @@ public class ShowH2Table extends JPanel {
         frame.setVisible(true);
     }
 
-    public static void getGui(String dbUrl, String dbLogin, String dbPass) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
-        createAndShowGUI(dbUrl,dbLogin,dbPass);
+    public static void getGui(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+        createAndShowGUI(dbUrl, dbLogin, dbPass);
     }
 }
 

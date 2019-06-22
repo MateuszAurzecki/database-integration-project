@@ -18,7 +18,7 @@ public class ShowMySqlTable extends JPanel {
                 "ministerstwo"};
 
         MySqlCreator mySqlCreator = new MySqlCreator();
-        List<SqlDatabase> mySqlList = mySqlCreator.getSqlDatabase(dbUrl,dbLogin,dbPass);
+        List<SqlDatabase> mySqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
 
 
         Object[][] database = new Object[mySqlList.size()][3];
@@ -43,7 +43,7 @@ public class ShowMySqlTable extends JPanel {
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         //Create and set up the content pane.
-        ShowMySqlTable newContentPane = new ShowMySqlTable(dbUrl,dbLogin,dbPass);
+        ShowMySqlTable newContentPane = new ShowMySqlTable(dbUrl, dbLogin, dbPass);
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
 
@@ -53,6 +53,6 @@ public class ShowMySqlTable extends JPanel {
     }
 
     public static void getGui(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
-        createAndShowGUI(dbUrl,dbLogin,dbPass);
+        createAndShowGUI(dbUrl, dbLogin, dbPass);
     }
 }

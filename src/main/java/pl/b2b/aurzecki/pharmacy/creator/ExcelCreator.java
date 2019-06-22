@@ -15,8 +15,6 @@ import java.util.List;
 
 public class ExcelCreator {
 
-    public static String FILE_PATH;
-
     public List<ExcelDatabase> getDatabase(String filePath) throws IOException {
         List<ExcelDatabase> result = new ArrayList<>();
 

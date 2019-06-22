@@ -1,7 +1,5 @@
 package pl.b2b.aurzecki.pharmacy.creator;
 
-import org.apache.log4j.Logger;
-import pl.b2b.aurzecki.pharmacy.domain.H2Database;
 import pl.b2b.aurzecki.pharmacy.domain.MainDatabase;
 
 import java.sql.Connection;
@@ -19,21 +17,16 @@ public class MainCreator {
     private static final String USER = "sa";
     private static final String PASS = "";
 
-    private Connection conn = null;
-    private Statement stmt = null;
-
-    private static final Logger LOG = Logger.getLogger(H2Database.class);
-
 
     public List<MainDatabase> getMainDatabase() throws ClassNotFoundException {
         Class.forName(JDBC_DRIVER);
-        List<MainDatabase> list = new ArrayList<>();
+        List<MainDatabase> result = new ArrayList<>();
+        String sql = "SELECT * FROM pharmacy";
 
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement();
-            String sql = "SELECT * FROM pharmacy";
-            ResultSet rs = stmt.executeQuery(sql);
+        try (
+                Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
                 Long id = (long) rs.getInt("id");
@@ -43,31 +36,11 @@ public class MainCreator {
                 data.setId(id);
                 data.setName(name);
                 data.setGovernmentNumber(govNumber);
-                list.add(data);
+                result.add(data);
             }
-            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            closeConnection();
         }
-        LOG.info("Found " + list.size() + " matches");
-        return list;
-    }
-
-
-    private void closeConnection() {
-        try {
-            if (stmt != null)
-                stmt.close();
-        } catch (SQLException se2) {
-        }
-        try {
-            if (conn != null)
-                conn.close();
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-        LOG.debug("Connection closed");
+        return result;
     }
 }

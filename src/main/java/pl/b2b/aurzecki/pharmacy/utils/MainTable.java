@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class MainTable {
 
@@ -18,14 +17,12 @@ public class MainTable {
     private static final String createTableId = "CREATE TABLE pharmacy(id bigint primary key not null, name varchar, government_number int)";
     private static final String createTableGov = "CREATE TABLE pharmacy(id bigint auto_increment, name varchar, government_number int unique)";
 
-    Connection conn = null;
-    private Statement stmt = null;
-
 
     public void CreateMainTable() throws SQLException {
 
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (
+                Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
+
             try (PreparedStatement preparedStatement = conn.prepareStatement(dropTable)) {
                 preparedStatement.execute();
             }
@@ -38,37 +35,17 @@ public class MainTable {
                     createByGov.execute();
                 }
             }
-        } finally {
-            closeConnection();
         }
     }
 
 
-    public void deleteAllFromMainDatabase() throws SQLException {
+    public void deleteAllFromMainDatabase() {
 
-        conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        try (
-                PreparedStatement preparedStatement = conn.prepareStatement("delete from pharmacy")) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             PreparedStatement preparedStatement = conn.prepareStatement("delete from pharmacy")) {
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            closeConnection();
         }
     }
-
-    private void closeConnection() {
-        try {
-            if (stmt != null)
-                stmt.close();
-        } catch (SQLException se2) {
-        }
-        try {
-            if (conn != null)
-                conn.close();
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-    }
-
 }

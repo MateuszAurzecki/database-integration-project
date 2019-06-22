@@ -1,6 +1,5 @@
 package pl.b2b.aurzecki.pharmacy.creator;
 
-import org.apache.log4j.Logger;
 import pl.b2b.aurzecki.pharmacy.domain.H2Database;
 
 import java.sql.Connection;
@@ -18,28 +17,16 @@ public class H2Creator {
     public static final String USER = "sa";
     public static final String PASS = "";
 
-    private Connection conn = null;
-    private Statement stmt = null;
-
-
 
     public List<H2Database> getH2Database(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
         Class.forName(JDBC_DRIVER);
-        List<H2Database> list = new ArrayList<>();
-        String sqlWithResources = "SELECT * FROM medicine";
-        try (Connection con1 = DriverManager.getConnection(dbUrl, dbLogin, dbPass);
-             Statement stmt = con1.createStatement();
-             ResultSet rs = stmt.executeQuery(sqlWithResources)) {
+        List<H2Database> result = new ArrayList<>();
+        String sql = "SELECT * FROM medicine";
 
-        } catch (SQLException ex) {
-
-        }
-
-        try {
-            conn = DriverManager.getConnection(dbUrl, dbLogin, dbPass);
-            stmt = conn.createStatement();
-            String sql = "SELECT * FROM medicine";
-            ResultSet rs = stmt.executeQuery(sql);
+        try (
+                Connection conn = DriverManager.getConnection(dbUrl, dbLogin, dbPass);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
                 Long id = Long.valueOf(rs.getInt("identyfikator"));
@@ -49,29 +36,12 @@ public class H2Creator {
                 data.setIdentyfikator(id);
                 data.setNazwaLeku(name);
                 data.setMin(ministerstwo);
-                list.add(data);
+                result.add(data);
             }
-            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            closeConnection();
         }
-        return list;
+        return result;
     }
 
-
-    private void closeConnection() {
-        try {
-            if (stmt != null)
-                stmt.close();
-        } catch (SQLException se2) {
-        }
-        try {
-            if (conn != null)
-                conn.close();
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-    }
 }

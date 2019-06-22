@@ -11,30 +11,26 @@ import java.util.List;
 public class ShowExcelTable extends JPanel {
 
     public ShowExcelTable(String path) throws IOException {
-        super(new GridLayout(1,0));
+        super(new GridLayout(1, 0));
 
         String[] columnNames = {"lp",
                 "nazwa",
                 "id_w_ministerstwie"};
-
 
         ExcelCreator excelCreator = new ExcelCreator();
         List<ExcelDatabase> excelDatabase = excelCreator.getDatabase(path);
 
 
         Object[][] database = new Object[excelDatabase.size()][3];
-        for(int i = 0; i < excelDatabase.size(); i++){
-               database[i][0] = excelDatabase.get(i).getLp();
-               database[i][1] = excelDatabase.get(i).getNazwa();
-               database[i][2] = excelDatabase.get(i).getId_w_ministerstwie();
+        for (int i = 0; i < excelDatabase.size(); i++) {
+            database[i][0] = excelDatabase.get(i).getLp();
+            database[i][1] = excelDatabase.get(i).getNazwa();
+            database[i][2] = excelDatabase.get(i).getId_w_ministerstwie();
         }
-
-
 
         final JTable table = new JTable(database, columnNames);
         table.setPreferredScrollableViewportSize(new Dimension(1280, 720));
         table.setFillsViewportHeight(true);
-
 
         JScrollPane scrollPane = new JScrollPane(table);
 
