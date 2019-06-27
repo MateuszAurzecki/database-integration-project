@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
 import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
-import pl.b2b.aurzecki.pharmacy.model.SqlDatabase;
+import pl.b2b.aurzecki.pharmacy.model.MySqlDatabaseModel;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,10 +20,12 @@ public class MySqlCreator {
 
     private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
 
-    public List<SqlDatabase> getSqlDatabase(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+
+    //function mapping database table to MySqlDatabaseModel objects and return it as a list of objects
+    public List<MySqlDatabaseModel> getSqlDatabase(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
 
         Class.forName(JDBC_DRIVER);
-        List<SqlDatabase> result = new ArrayList<>();
+        List<MySqlDatabaseModel> result = new ArrayList<>();
 
         try (
                 Connection conn = DriverManager.getConnection(dbUrl, dbLogin, dbPass);
@@ -34,7 +36,7 @@ public class MySqlCreator {
                 Long ident = (long) rs.getInt("ident");
                 String name = rs.getString("nazwa");
                 Long ministerstwo = Long.valueOf(rs.getString("ministerstwo"));
-                SqlDatabase data = new SqlDatabase();
+                MySqlDatabaseModel data = new MySqlDatabaseModel();
                 data.setIdent(ident);
                 data.setNazwa(name);
                 data.setMinisterstwo(ministerstwo);
@@ -47,7 +49,8 @@ public class MySqlCreator {
         return result;
     }
 
-    public List<String> MySqlTableColumnNames(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    //function returns list of string with names of columns in table
+    public List<String> mySqlTableColumnNames(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
         Class.forName(JDBC_DRIVER);
         List<String> result = new ArrayList<>();
         try (

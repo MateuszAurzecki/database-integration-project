@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class ExcelDatabase {
+public class ExcelDatabaseModel {
 
     private Long lp;
     private String nazwa;

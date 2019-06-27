@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
-import pl.b2b.aurzecki.pharmacy.model.ExcelDatabase;
+import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,10 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExcelCreator {
+
     public ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
 
-    public List<ExcelDatabase> getDatabase(String filePath) {
-        List<ExcelDatabase> result = new ArrayList<>();
+
+    //function mapping excel file table to ExcelDatabaseModel objects and return it as a list of objects
+    public List<ExcelDatabaseModel> getDatabase(String filePath) {
+
+        List<ExcelDatabaseModel> result = new ArrayList<>();
         File file = new File(filePath);
         try (
                 FileInputStream fip = new FileInputStream(file);
@@ -30,18 +34,18 @@ public class ExcelCreator {
                 if (row.getRowNum() == 0) {
                     continue;
                 }
-                ExcelDatabase excelDatabase = new ExcelDatabase();
+                ExcelDatabaseModel excelDatabaseModel = new ExcelDatabaseModel();
                 for (Cell cell : row) {
                     if (cell.getColumnIndex() == 0) {
-                        excelDatabase.setLp(Long.valueOf(dataFormatter.formatCellValue(cell)));
+                        excelDatabaseModel.setLp(Long.valueOf(dataFormatter.formatCellValue(cell)));
                     } else if (cell.getColumnIndex() == 1) {
-                        excelDatabase.setNazwa(dataFormatter.formatCellValue(cell));
+                        excelDatabaseModel.setNazwa(dataFormatter.formatCellValue(cell));
                     } else if (cell.getColumnIndex() == 2) {
-                        excelDatabase.setId_w_ministerstwie(Long.valueOf(dataFormatter.formatCellValue(cell)));
+                        excelDatabaseModel.setId_w_ministerstwie(Long.valueOf(dataFormatter.formatCellValue(cell)));
 
                     }
                 }
-                result.add(excelDatabase);
+                result.add(excelDatabaseModel);
             }
         } catch (IOException e) {
             exceptionsHandler.isExcelFilePathValid(filePath);
@@ -49,6 +53,7 @@ public class ExcelCreator {
         return result;
     }
 
+    //function returns list of string with names of columns in table
     public List<String> excelTableColumnNames(String filePath) throws IOException {
         List<String> result = new ArrayList<>();
 

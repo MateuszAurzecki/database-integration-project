@@ -1,6 +1,6 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
-import pl.b2b.aurzecki.pharmacy.model.MainDatabase;
+import pl.b2b.aurzecki.pharmacy.model.MainDatabaseModel;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,9 +20,10 @@ public class MainCreator {
     String sql = "SELECT * FROM pharmacy";
 
 
-    public List<MainDatabase> getMainDatabase() throws ClassNotFoundException {
+    //function mapping main database table to MainDatabaseModel objects and return it as a list of objects
+    public List<MainDatabaseModel> getMainDatabase() throws ClassNotFoundException {
         Class.forName(JDBC_DRIVER);
-        List<MainDatabase> result = new ArrayList<>();
+        List<MainDatabaseModel> result = new ArrayList<>();
 
 
         try (
@@ -34,7 +35,7 @@ public class MainCreator {
                 Long id = (long) rs.getInt("id");
                 String name = rs.getString("name");
                 Long govNumber = Long.valueOf(rs.getString("government_number"));
-                MainDatabase data = new MainDatabase();
+                MainDatabaseModel data = new MainDatabaseModel();
                 data.setId(id);
                 data.setName(name);
                 data.setGovernmentNumber(govNumber);
@@ -46,6 +47,7 @@ public class MainCreator {
         return result;
     }
 
+    //function returns list of string with names of columns in table
     public List<String> mainTableColumnNames() throws ClassNotFoundException, SQLException {
         Class.forName(JDBC_DRIVER);
         List<String> result = new ArrayList<>();

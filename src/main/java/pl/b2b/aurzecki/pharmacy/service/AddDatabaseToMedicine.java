@@ -1,9 +1,9 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
 import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
-import pl.b2b.aurzecki.pharmacy.model.ExcelDatabase;
-import pl.b2b.aurzecki.pharmacy.model.H2Database;
-import pl.b2b.aurzecki.pharmacy.model.SqlDatabase;
+import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
+import pl.b2b.aurzecki.pharmacy.model.H2DatabaseModel;
+import pl.b2b.aurzecki.pharmacy.model.MySqlDatabaseModel;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,15 +29,19 @@ public class AddDatabaseToMedicine {
     private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
 
 
+    //function adding ExcelFile to Main Database
     public void addExcelToMedicine(final List<String> columnMappingList, final String path) {
 
         ExcelCreator excelCreator = new ExcelCreator();
-        List<ExcelDatabase> excelList = excelCreator.getDatabase(path);
+
+        //getting list of ExcelDatabaseModel object from excel file
+        List<ExcelDatabaseModel> excelList = excelCreator.getDatabase(path);
 
         int column1 = 0;
         int column2 = 0;
         int column3 = 0;
 
+        //setting table columns in custom order selected in the form
         for (int i = 0; i < columnMappingList.size(); i++) {
             if (columnMappingList.get(i).contains("lp")) {
                 column1 = i + 1;
@@ -49,14 +53,14 @@ public class AddDatabaseToMedicine {
         }
 
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
-            Iterator<ExcelDatabase> it = excelList.iterator();
+            Iterator<ExcelDatabaseModel> it = excelList.iterator();
 
             while (it.hasNext()) {
-                ExcelDatabase e = it.next();
+                ExcelDatabaseModel e = it.next();
 
                 try (PreparedStatement ps = conn.prepareStatement(queryId);
                      PreparedStatement check = conn.prepareStatement(queryCheck)) {
-
+                    //checking if record is present in main database
                     check.setLong(1, e.getLp());
                     ResultSet recordExist = check.executeQuery();
                     if (recordExist.next()) {
@@ -69,11 +73,9 @@ public class AddDatabaseToMedicine {
                     ps.execute();
                     recordExist.close();
                 }
-
             }
         } catch (SQLException e) {
             exceptionsHandler.columnMatchingError();
-
         }
     }
 
@@ -87,12 +89,13 @@ public class AddDatabaseToMedicine {
             e.printStackTrace();
         }
 
-        List<SqlDatabase> sqlList = new ArrayList<>();
+        List<MySqlDatabaseModel> sqlList = new ArrayList<>();
 
         int column1 = 0;
         int column2 = 0;
         int column3 = 0;
 
+        //setting table columns in custom order selected in the form
         for (int i = 0; i < columnMappingList.size(); i++) {
             if (columnMappingList.get(i).contains("IDENT")) {
                 column1 = i + 1;
@@ -103,6 +106,7 @@ public class AddDatabaseToMedicine {
             }
         }
         try {
+            //getting list of MySqlDatabaseModel object from MySql database
             sqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -110,10 +114,10 @@ public class AddDatabaseToMedicine {
 
         try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
-            Iterator<SqlDatabase> it = sqlList.iterator();
+            Iterator<MySqlDatabaseModel> it = sqlList.iterator();
 
             while (it.hasNext()) {
-                SqlDatabase e = it.next();
+                MySqlDatabaseModel e = it.next();
                 try (
                         PreparedStatement preparedStatement = conn.prepareStatement(queryId);
                         PreparedStatement checkIfRecordExist = conn.prepareStatement(queryCheck)
@@ -148,12 +152,13 @@ public class AddDatabaseToMedicine {
             e.printStackTrace();
         }
 
-        List<H2Database> h2List = new ArrayList<>();
+        List<H2DatabaseModel> h2List = new ArrayList<>();
 
         int column1 = 0;
         int column2 = 0;
         int column3 = 0;
 
+        //setting table columns in custom order selected in the form
         for (int i = 0; i < columnMappingList.size(); i++) {
             if (columnMappingList.get(i).contains("IDENTYFIKATOR")) {
                 column1 = i + 1;
@@ -171,10 +176,10 @@ public class AddDatabaseToMedicine {
 
         try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
-            Iterator<H2Database> it = h2List.iterator();
+            Iterator<H2DatabaseModel> it = h2List.iterator();
 
             while (it.hasNext()) {
-                H2Database e = it.next();
+                H2DatabaseModel e = it.next();
                 try (
                         PreparedStatement preparedStatement = conn.prepareStatement(queryId);
                         PreparedStatement checkIfRecordExist = conn.prepareStatement(queryCheck)

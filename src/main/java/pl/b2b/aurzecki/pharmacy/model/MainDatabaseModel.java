@@ -8,7 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class MainDatabase {
+public class MainDatabaseModel {
 
     private Long id;
     private String name;

@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class H2Database {
+public class H2DatabaseModel {
 
     private Long identyfikator;
     private String nazwaLeku;

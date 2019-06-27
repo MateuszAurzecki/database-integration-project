@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
 import pl.b2b.aurzecki.pharmacy.service.MainCreator;
-import pl.b2b.aurzecki.pharmacy.model.MainDatabase;
+import pl.b2b.aurzecki.pharmacy.model.MainDatabaseModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,14 +17,15 @@ public class ShowMainDatabase extends JPanel {
                 "government_number"};
 
         MainCreator mainCreator = new MainCreator();
-        List<MainDatabase> mainDatabase = mainCreator.getMainDatabase();
+        //getting data from database
+        List<MainDatabaseModel> mainDatabaseModel = mainCreator.getMainDatabase();
 
-
-        Object[][] database = new Object[mainDatabase.size()][3];
-        for (int i = 0; i < mainDatabase.size(); i++) {
-            database[i][0] = mainDatabase.get(i).getId();
-            database[i][1] = mainDatabase.get(i).getName();
-            database[i][2] = mainDatabase.get(i).getGovernmentNumber();
+        //inserting data to columns
+        Object[][] database = new Object[mainDatabaseModel.size()][3];
+        for (int i = 0; i < mainDatabaseModel.size(); i++) {
+            database[i][0] = mainDatabaseModel.get(i).getId();
+            database[i][1] = mainDatabaseModel.get(i).getName();
+            database[i][2] = mainDatabaseModel.get(i).getGovernmentNumber();
         }
 
 

@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
 import pl.b2b.aurzecki.pharmacy.service.MySqlCreator;
-import pl.b2b.aurzecki.pharmacy.model.SqlDatabase;
+import pl.b2b.aurzecki.pharmacy.model.MySqlDatabaseModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.util.List;
 public class ShowMySqlTable extends JPanel {
     private MySqlCreator mySqlCreator = new MySqlCreator();
     private List<String> columnNames;
-    private List<SqlDatabase> mySqlList;
+    private List<MySqlDatabaseModel> mySqlList;
 
     private ShowMySqlTable(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         super(new GridLayout(1, 0));
@@ -19,7 +19,7 @@ public class ShowMySqlTable extends JPanel {
         mySqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
 
         //getting column names for table
-        columnNames = mySqlCreator.MySqlTableColumnNames(dbUrl, dbLogin, dbPass);
+        columnNames = mySqlCreator.mySqlTableColumnNames(dbUrl, dbLogin, dbPass);
 
 
         //inserting data to columns

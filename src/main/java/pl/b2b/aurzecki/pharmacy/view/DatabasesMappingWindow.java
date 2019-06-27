@@ -46,7 +46,7 @@ public class DatabasesMappingWindow extends JDialog {
             }
         } else if (driver.equals("com.mysql.cj.jdbc.Driver")) {
             try {
-                columnNames = mySqlCreator.MySqlTableColumnNames(dbUrl, dbLogin, dbPass);
+                columnNames = mySqlCreator.mySqlTableColumnNames(dbUrl, dbLogin, dbPass);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -125,19 +125,4 @@ public class DatabasesMappingWindow extends JDialog {
         });
     }
 
-
-//    private static void createAndShowGUI() {
-//        JFrame frame = new JFrame("Databases Mapping Window");
-//        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-//
-//        DatabasesMappingWindow databasesMappingWindow = new DatabasesMappingWindow();
-//        frame.setContentPane(databasesMappingWindow);
-//        databasesMappingWindow.setOpaque
-//        frame.pack();
-//        frame.setVisible(true);
-//    }
-//
-//    public static void getGui() {
-//        createAndShowGUI();
-//    }
 }

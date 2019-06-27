@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
+import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 import pl.b2b.aurzecki.pharmacy.service.ExcelCreator;
-import pl.b2b.aurzecki.pharmacy.model.ExcelDatabase;
 import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
 
 import javax.swing.*;
@@ -26,14 +26,14 @@ public class ShowExcelTable extends JPanel {
         }
 
         //getting data from database
-        List<ExcelDatabase> excelDatabase = excelCreator.getDatabase(path);
+        List<ExcelDatabaseModel> excelDatabaseModel = excelCreator.getDatabase(path);
 
         //inserting data to columns
-        Object[][] database = new Object[excelDatabase.size()][3];
-        for (int i = 0; i < excelDatabase.size(); i++) {
-            database[i][0] = excelDatabase.get(i).getLp();
-            database[i][1] = excelDatabase.get(i).getNazwa();
-            database[i][2] = excelDatabase.get(i).getId_w_ministerstwie();
+        Object[][] database = new Object[excelDatabaseModel.size()][3];
+        for (int i = 0; i < excelDatabaseModel.size(); i++) {
+            database[i][0] = excelDatabaseModel.get(i).getLp();
+            database[i][1] = excelDatabaseModel.get(i).getNazwa();
+            database[i][2] = excelDatabaseModel.get(i).getId_w_ministerstwie();
         }
 
         final JTable table = new JTable(database, columnNames.toArray());

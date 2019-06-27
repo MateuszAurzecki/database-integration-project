@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class SqlDatabase {
+public class MySqlDatabaseModel {
 
     private Long ident;
     private String nazwa;

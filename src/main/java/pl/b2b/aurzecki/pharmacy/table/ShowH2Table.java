@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
 import pl.b2b.aurzecki.pharmacy.service.H2Creator;
-import pl.b2b.aurzecki.pharmacy.model.H2Database;
+import pl.b2b.aurzecki.pharmacy.model.H2DatabaseModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class ShowH2Table extends JPanel {
 
     private H2Creator h2Creator = new H2Creator();
     private List<String> columnNames;
-    private List<H2Database> h2Database;
+    private List<H2DatabaseModel> h2DatabaseModel;
 
 
     private ShowH2Table(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
@@ -26,14 +26,14 @@ public class ShowH2Table extends JPanel {
         }
 
         //getting data from database
-        h2Database = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
+        h2DatabaseModel = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
 
         //inserting data to columns
-        Object[][] database = new Object[h2Database.size()][3];
-        for (int i = 0; i < h2Database.size(); i++) {
-            database[i][0] = h2Database.get(i).getIdentyfikator();
-            database[i][1] = h2Database.get(i).getNazwaLeku();
-            database[i][2] = h2Database.get(i).getMin();
+        Object[][] database = new Object[h2DatabaseModel.size()][3];
+        for (int i = 0; i < h2DatabaseModel.size(); i++) {
+            database[i][0] = h2DatabaseModel.get(i).getIdentyfikator();
+            database[i][1] = h2DatabaseModel.get(i).getNazwaLeku();
+            database[i][2] = h2DatabaseModel.get(i).getMin();
         }
 
 
