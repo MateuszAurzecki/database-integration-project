@@ -1,26 +1,28 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.creator.MySqlCreator;
-import pl.b2b.aurzecki.pharmacy.domain.SqlDatabase;
+import pl.b2b.aurzecki.pharmacy.service.MySqlCreator;
+import pl.b2b.aurzecki.pharmacy.model.SqlDatabase;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
 public class ShowMySqlTable extends JPanel {
+    private MySqlCreator mySqlCreator = new MySqlCreator();
+    private List<String> columnNames;
+    private List<SqlDatabase> mySqlList;
 
-
-    private ShowMySqlTable(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    private ShowMySqlTable(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         super(new GridLayout(1, 0));
 
-        String[] columnNames = {"ident",
-                "nazwa",
-                "ministerstwo"};
+        //getting data from database
+        mySqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
 
-        MySqlCreator mySqlCreator = new MySqlCreator();
-        List<SqlDatabase> mySqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
+        //getting column names for table
+        columnNames = mySqlCreator.MySqlTableColumnNames(dbUrl, dbLogin, dbPass);
 
 
+        //inserting data to columns
         Object[][] database = new Object[mySqlList.size()][3];
         for (int i = 0; i < mySqlList.size(); i++) {
             database[i][0] = mySqlList.get(i).getIdent();
@@ -29,15 +31,18 @@ public class ShowMySqlTable extends JPanel {
         }
 
 
-        final JTable table = new JTable(database, columnNames);
+        final JTable table = new JTable(database, columnNames.toArray());
         table.setPreferredScrollableViewportSize(new Dimension(1280, 720));
         table.setFillsViewportHeight(true);
 
+        //Create the scroll pane and add the table to it.
         JScrollPane scrollPane = new JScrollPane(table);
+
+        //Add the scroll pane to this panel.
         add(scrollPane);
     }
 
-    private static void createAndShowGUI(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    private static void createAndShowGUI(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         //Create and set up the window.
         JFrame frame = new JFrame("Show MySql Table");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -52,7 +57,7 @@ public class ShowMySqlTable extends JPanel {
         frame.setVisible(true);
     }
 
-    public static void getGui(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    public static void getGui(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         createAndShowGUI(dbUrl, dbLogin, dbPass);
     }
 }

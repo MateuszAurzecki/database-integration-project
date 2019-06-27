@@ -1,26 +1,34 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.creator.H2Creator;
-import pl.b2b.aurzecki.pharmacy.domain.H2Database;
+import pl.b2b.aurzecki.pharmacy.service.H2Creator;
+import pl.b2b.aurzecki.pharmacy.model.H2Database;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ShowH2Table extends JPanel {
 
+    private H2Creator h2Creator = new H2Creator();
+    private List<String> columnNames;
+    private List<H2Database> h2Database;
 
-    private ShowH2Table(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+
+    private ShowH2Table(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         super(new GridLayout(1, 0));
 
-        String[] columnNames = {"identyfikator",
-                "nazwaLeku",
-                "min"};
+        //getting column names for table
+        try {
+            columnNames = h2Creator.h2TableColumnNames(dbUrl, dbLogin, dbPass);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        H2Creator h2Creator = new H2Creator();
-        List<H2Database> h2Database = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
+        //getting data from database
+        h2Database = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
 
-
+        //inserting data to columns
         Object[][] database = new Object[h2Database.size()][3];
         for (int i = 0; i < h2Database.size(); i++) {
             database[i][0] = h2Database.get(i).getIdentyfikator();
@@ -29,7 +37,7 @@ public class ShowH2Table extends JPanel {
         }
 
 
-        final JTable table = new JTable(database, columnNames);
+        final JTable table = new JTable(database, columnNames.toArray());
         table.setPreferredScrollableViewportSize(new Dimension(1280, 720));
         table.setFillsViewportHeight(true);
 
@@ -41,22 +49,24 @@ public class ShowH2Table extends JPanel {
     }
 
 
-    private static void createAndShowGUI(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    private static void createAndShowGUI(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         //Create and set up the window.
-        JFrame frame = new JFrame("Show H2 Table");
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        JDialog dialog = new JDialog();
+        dialog.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         //Create and set up the content pane.
-        ShowH2Table newContentPane = new ShowH2Table(dbUrl, dbLogin, dbPass);
-        newContentPane.setOpaque(true); //content panes must be opaque
-        frame.setContentPane(newContentPane);
+        ShowH2Table h2Table = new ShowH2Table(dbUrl, dbLogin, dbPass);
+        h2Table.setOpaque(true); //content panes must be opaque
+        dialog.setContentPane(h2Table);
 
         //Display the window.
-        frame.pack();
-        frame.setVisible(true);
+        dialog.pack();
+        dialog.setVisible(true);
+        dialog.setModal(true);
+
     }
 
-    public static void getGui(String dbUrl, String dbLogin, String dbPass) throws ClassNotFoundException {
+    public static void getGui(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
         createAndShowGUI(dbUrl, dbLogin, dbPass);
     }
 }

@@ -1,12 +1,0 @@
-
-Asquid:S1148L"#Use a logger to log this exception.(¸ß¹8Ê¼š²´-
-Hsquid:S00108F")Either remove or fill this block of code.(â•¼İ8Ê¼š²´-
-Hsquid:S00108#")Either remove or fill this block of code.(À‹ø„8Ê¼š²´-
-Gsquid:S2115")Add password protection to this database.(ŒˆáÛ8Ë„²´-
-¶%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.IllegalAccessException', as it cannot be thrown from method's body.(ÛƒéËùÿÿÿÿ8Ê…¾²´-
-Gsquid:S2115(")Add password protection to this database.(»¥ÏÉ8Ë„²´-
-jsquid:S2095+"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ÊõŞàşÿÿÿÿ8Ê¼š²´-
-¶%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.InstantiationException', as it cannot be thrown from method's body.(ÛƒéËùÿÿÿÿ8Ê…¾²´-
-fsquid:HiddenFieldCheck "8Rename "stmt" which hides the field declared at line 22.(’Ãàşÿÿÿÿ8Ê¼š²´-
-Gsquid:S00108!")Either remove or fill this block of code.(œ‰—"8Ê¼š²´-
-Fsquid:S11489"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ê¼š²´-

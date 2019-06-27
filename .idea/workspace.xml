@@ -2,7 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f0ea5d3-3c0f-4f4c-9303-491f3dc65176" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/AddDatabaseToMedicine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/ExcelCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/DatabaseConnectionWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/DatabasesMappingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/ExcelMappingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/PharmacyGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e844fc68f0e4902ab0ca11999edd5111d86b32" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e844fc68f0e4902ab0ca11999edd5111d86b32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72035cb04455566f9e621816b41a36fd03ccbaae" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72035cb04455566f9e621816b41a36fd03ccbaae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85a2341541926416d7d96b542017157f4c0b1105" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85a2341541926416d7d96b542017157f4c0b1105" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b8cc111d897177804304ef55927d7d30fd5e3c0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b8cc111d897177804304ef55927d7d30fd5e3c0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3887477b407087f3375db6caa43b4b6fc703425" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/H2Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MainCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MySqlCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/ExcelDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/ExcelDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/H2Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/H2Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/MainDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/MainDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/SqlDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/SqlDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/mapper/DatabaseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/MainTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/H2Creator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/MainCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/ExcelDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/H2Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/MainDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/domain/SqlDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/gui/IdWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/mapper/DatabaseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/utils/MainTable.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,10 +64,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MySqlCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
-              <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            <state relative-caret-position="170">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,19 +76,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="375">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,10 +88,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/ExcelCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="178">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,10 +100,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/PharmacyGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2625">
-              <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
+            <state relative-caret-position="270">
+              <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,10 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/mapper/DatabaseMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/ExcelMappingWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="505">
+              <caret line="108" column="1" lean-forward="true" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,10 +124,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/Validator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="14" column="60" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="347">
+              <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,10 +136,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/H2Creator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+            <state relative-caret-position="-30">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,10 +148,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+            <state relative-caret-position="90">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,11 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -162,20 +211,35 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/PharmcyGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/SimpleTableDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/LoginWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/PharmacyGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MainCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/MainTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/RowListModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/mapper/ColumnMapping.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/DatabaseAddressWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/exceptions/BaseExceptions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/exceptions/BaseException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/exceptions/WrongDatabaseDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/AbstractTableModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/DatabaseConnectionModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/MainTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MainCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/ExcelMappingWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/DatabaseConnectionWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/DatabasesMappingWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/Validator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/Validator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/H2Creator.java" />
       </list>
     </option>
   </component>
@@ -202,11 +266,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="50" />
-    <option name="y" value="161" />
-    <option name="width" value="1870" />
-    <option name="height" value="860" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="855" />
+    <option name="width" value="1085" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,7 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -289,7 +351,7 @@
               <item name="b2b" type="462c0819:PsiDirectoryNode" />
               <item name="aurzecki" type="462c0819:PsiDirectoryNode" />
               <item name="pharmacy" type="462c0819:PsiDirectoryNode" />
-              <item name="creator" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pharmacy" type="b2602c69:ProjectViewProjectNode" />
@@ -301,19 +363,7 @@
               <item name="b2b" type="462c0819:PsiDirectoryNode" />
               <item name="aurzecki" type="462c0819:PsiDirectoryNode" />
               <item name="pharmacy" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pharmacy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pharmacy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pl" type="462c0819:PsiDirectoryNode" />
-              <item name="b2b" type="462c0819:PsiDirectoryNode" />
-              <item name="aurzecki" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacy" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pharmacy" type="b2602c69:ProjectViewProjectNode" />
@@ -337,7 +387,7 @@
               <item name="b2b" type="462c0819:PsiDirectoryNode" />
               <item name="aurzecki" type="462c0819:PsiDirectoryNode" />
               <item name="pharmacy" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pharmacy" type="b2602c69:ProjectViewProjectNode" />
@@ -401,15 +451,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="255" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="184" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560968569694" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/B2B" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561656487052" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/myFirstCollection040219" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
@@ -436,7 +487,7 @@
       <module name="Pharmacy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.gui.*" />
+          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -449,7 +500,7 @@
       <module name="Pharmacy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.gui.*" />
+          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -458,11 +509,11 @@
       </method>
     </configuration>
     <configuration name="PharmacyGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.b2b.aurzecki.pharmacy.gui.PharmacyGui" />
+      <option name="MAIN_CLASS_NAME" value="pl.b2b.aurzecki.pharmacy.view.PharmacyGui" />
       <module name="Pharmacy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.gui.*" />
+          <option name="PATTERN" value="pl.b2b.aurzecki.pharmacy.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -509,9 +560,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -523,14 +575,14 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719547" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791086" weight="0.20679887" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49860725" weight="0.29036826" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.20679887" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49860725" weight="0.3555241" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50208914" side_tool="true" weight="0.28735632" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49798658" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026846" side_tool="true" weight="0.20679887" />
       <window_info anchor="bottom" id="SonarLint" order="10" />
       <window_info anchor="bottom" id="SQL" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32719547" />
@@ -542,7 +594,7 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.3295302" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Key Promoter X" order="6" />
+      <window_info anchor="right" id="Key Promoter X" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -613,6 +665,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain.java" />
@@ -665,128 +731,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/SqlDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/MainDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/LoginWindow.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql" />
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/b2b/aurzecki/pharmacy/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MainCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/ExcelDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/MainTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/domain/H2Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/H2Creator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/MySqlCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -800,50 +751,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.12/poi-3.12.jar!/org/apache/poi/ss/usermodel/DataFormatter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="458" column="18" selection-start-line="458" selection-start-column="18" selection-end-line="458" selection-end-column="18" />
+          <folding>
+            <element signature="e#18069#18070#0" expanded="true" />
+            <element signature="e#18142#18143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.12/poi-ooxml-3.12.jar!/org/apache/poi/xssf/usermodel/XSSFWorkbook.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12189">
+          <caret line="133" column="11" selection-start-line="133" selection-start-column="11" selection-end-line="133" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/ExcelDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/SqlDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/mapper/ColumnMapping.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
+          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/exceptions/BaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/MainDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/RowListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#994#995#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/AbstractTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/DatabaseConnectionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="27" column="48" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/exceptions/WrongDatabaseDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/model/H2Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/IdWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMainDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/creator/ExcelCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/gui/PharmacyGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/utils/AddDatabaseToMedicine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -852,8 +886,146 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowExcelTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/AddDatabaseToMedicine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="136" column="29" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/DatabaseConnectionWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="124" column="52" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowMySqlTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/DatabasesMappingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/ExcelCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MySqlCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/table/ShowH2Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/PharmacyGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/view/ExcelMappingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="108" column="1" lean-forward="true" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/MainCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/b2b/aurzecki/pharmacy/service/H2Creator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -925,6 +1097,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,7 +1,8 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.creator.ExcelCreator;
-import pl.b2b.aurzecki.pharmacy.domain.ExcelDatabase;
+import pl.b2b.aurzecki.pharmacy.service.ExcelCreator;
+import pl.b2b.aurzecki.pharmacy.model.ExcelDatabase;
+import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,17 +11,24 @@ import java.util.List;
 
 public class ShowExcelTable extends JPanel {
 
-    public ShowExcelTable(String path) throws IOException {
+    private ExcelCreator excelCreator = new ExcelCreator();
+    private List<String> columnNames;
+    private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
+
+    public ShowExcelTable(final String path) {
         super(new GridLayout(1, 0));
 
-        String[] columnNames = {"lp",
-                "nazwa",
-                "id_w_ministerstwie"};
+        //getting column names for table
+        try {
+            columnNames = excelCreator.excelTableColumnNames(path);
+        } catch (IOException e) {
+            exceptionsHandler.isExcelFilePathValid(path);
+        }
 
-        ExcelCreator excelCreator = new ExcelCreator();
+        //getting data from database
         List<ExcelDatabase> excelDatabase = excelCreator.getDatabase(path);
 
-
+        //inserting data to columns
         Object[][] database = new Object[excelDatabase.size()][3];
         for (int i = 0; i < excelDatabase.size(); i++) {
             database[i][0] = excelDatabase.get(i).getLp();
@@ -28,7 +36,7 @@ public class ShowExcelTable extends JPanel {
             database[i][2] = excelDatabase.get(i).getId_w_ministerstwie();
         }
 
-        final JTable table = new JTable(database, columnNames);
+        final JTable table = new JTable(database, columnNames.toArray());
         table.setPreferredScrollableViewportSize(new Dimension(1280, 720));
         table.setFillsViewportHeight(true);
 
@@ -38,7 +46,7 @@ public class ShowExcelTable extends JPanel {
     }
 
 
-    private static void createAndShowGUI(String path) throws IOException {
+    private static void createAndShowGUI(final String path) {
         JFrame frame = new JFrame("ShowExcelTable");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
@@ -50,7 +58,7 @@ public class ShowExcelTable extends JPanel {
         frame.setVisible(true);
     }
 
-    public static void getGui(String path) throws IOException {
+    public static void getGui(final String path) {
         createAndShowGUI(path);
     }
 }

@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.creator.MainCreator;
-import pl.b2b.aurzecki.pharmacy.domain.MainDatabase;
+import pl.b2b.aurzecki.pharmacy.service.MainCreator;
+import pl.b2b.aurzecki.pharmacy.model.MainDatabase;
 
 import javax.swing.*;
 import java.awt.*;

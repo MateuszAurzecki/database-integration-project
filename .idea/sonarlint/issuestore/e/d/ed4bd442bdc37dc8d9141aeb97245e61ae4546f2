@@ -1,12 +1,0 @@
-
-Hsquid:S00108F")Either remove or fill this block of code.(â•¼İ8áŞÉ­´-
-Asquid:S1148L"#Use a logger to log this exception.(¸ß¹8áŞÉ­´-
-±%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.InstantiationException', as it cannot be thrown from method's body.(¿Úù¸8í“¢¯´-
->squid:S2068" Remove this hard-coded password.(ŒˆáÛ8¨ÍÛ­´-
-Hsquid:S00108#")Either remove or fill this block of code.(À‹ø„8áŞÉ­´-
-Fsquid:S11489"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8áŞÉ­´-
->squid:S2068(" Remove this hard-coded password.(»¥ÏÉ8¨ÍÛ­´-
-jsquid:S2095+"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ÊõŞàşÿÿÿÿ8áŞÉ­´-
-Gsquid:S00108!")Either remove or fill this block of code.(œ‰—"8áŞÉ­´-
-±%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.IllegalAccessException', as it cannot be thrown from method's body.(¿Úù¸8í“¢¯´-
-fsquid:HiddenFieldCheck "8Rename "stmt" which hides the field declared at line 22.(’Ãàşÿÿÿÿ8áŞÉ­´-
