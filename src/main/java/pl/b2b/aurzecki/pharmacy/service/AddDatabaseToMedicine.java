@@ -1,6 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
-import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
+import pl.b2b.aurzecki.pharmacy.errorDialog.ErrorMessageDialog;
+import pl.b2b.aurzecki.pharmacy.exceptions.ConnectionExceptions;
 import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 import pl.b2b.aurzecki.pharmacy.model.H2DatabaseModel;
 import pl.b2b.aurzecki.pharmacy.model.MySqlDatabaseModel;
@@ -10,7 +11,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -26,11 +26,11 @@ public class AddDatabaseToMedicine {
 
     private MySqlCreator mySqlCreator = new MySqlCreator();
     private H2Creator h2Creator = new H2Creator();
-    private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
+    private ErrorMessageDialog errorMessageDialog = new ErrorMessageDialog();
 
 
     //function adding ExcelFile to Main Database
-    public void addExcelToMedicine(final List<String> columnMappingList, final String path) {
+    public String addExcelToMedicine(final List<String> columnMappingList, final String path) {
 
         ExcelCreator excelCreator = new ExcelCreator();
 
@@ -62,34 +62,33 @@ public class AddDatabaseToMedicine {
                      PreparedStatement check = conn.prepareStatement(queryCheck)) {
                     //checking if record is present in main database
                     check.setLong(1, e.getLp());
-                    ResultSet recordExist = check.executeQuery();
-                    if (recordExist.next()) {
-                        continue;
+                    try (ResultSet recordExist = check.executeQuery()) {
+                        if (recordExist.next()) {
+                            continue;
+                        }
+                        ps.setLong(column1, e.getLp());
+                        ps.setString(column2, e.getNazwa());
+                        ps.setLong(column3, e.getId_w_ministerstwie());
+                        ps.addBatch();
+                        ps.execute();
                     }
-                    ps.setLong(column1, e.getLp());
-                    ps.setString(column2, e.getNazwa());
-                    ps.setLong(column3, e.getId_w_ministerstwie());
-                    ps.addBatch();
-                    ps.execute();
-                    recordExist.close();
                 }
             }
         } catch (SQLException e) {
-            exceptionsHandler.columnMatchingError();
+            errorMessageDialog.columnMatchingError();
         }
+        return "Excel file succesfully added";
     }
 
 
     //function insert MySql database to main database
-    public void addMySqlToMedicine(final List<String> columnMappingList, final String dbUrl, final String dbPass, final String dbLogin) {
+    public String addMySqlToMedicine(final List<String> columnMappingList, final String dbUrl, final String dbPass, final String dbLogin) {
 
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-        List<MySqlDatabaseModel> sqlList = new ArrayList<>();
 
         int column1 = 0;
         int column2 = 0;
@@ -105,12 +104,9 @@ public class AddDatabaseToMedicine {
                 column3 = i + 1;
             }
         }
-        try {
-            //getting list of MySqlDatabaseModel object from MySql database
-            sqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        //getting list of MySqlDatabaseModel object from MySql database
+        List<MySqlDatabaseModel> sqlList = mySqlCreator.getSqlDatabase(dbUrl, dbLogin, dbPass);
+
 
         try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
@@ -121,7 +117,7 @@ public class AddDatabaseToMedicine {
                 try (
                         PreparedStatement preparedStatement = conn.prepareStatement(queryId);
                         PreparedStatement checkIfRecordExist = conn.prepareStatement(queryCheck)
-                ){
+                ) {
                     //checking if record exist in database
                     checkIfRecordExist.setLong(1, e.getIdent());
                     ResultSet recordExist = checkIfRecordExist.executeQuery();
@@ -135,24 +131,22 @@ public class AddDatabaseToMedicine {
                     preparedStatement.execute();
                     recordExist.close();
                 } catch (SQLException e1) {
-                    exceptionsHandler.columnMatchingError();
+                    errorMessageDialog.columnMatchingError();
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return "Database added";
     }
 
     //function adding h2 database to main database
-    public void addH2ToMedicine(final List<String> columnMappingList, final String dbUrl, final String dbPass, final String dbLogin) {
+    public String addH2ToMedicine(final List<String> columnMappingList, final String dbUrl, final String dbLogin, final String dbPass) {
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-        List<H2DatabaseModel> h2List = new ArrayList<>();
 
         int column1 = 0;
         int column2 = 0;
@@ -168,11 +162,7 @@ public class AddDatabaseToMedicine {
                 column3 = i + 1;
             }
         }
-        try {
-            h2List = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        List<H2DatabaseModel> h2List = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
 
         try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
@@ -197,11 +187,12 @@ public class AddDatabaseToMedicine {
                     preparedStatement.execute();
                     recordExist.close();
                 } catch (SQLException e1) {
-                    exceptionsHandler.columnMatchingError();
+                    errorMessageDialog.columnMatchingError();
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ConnectionExceptions();
         }
+        return "H2 database added to main database";
     }
 }

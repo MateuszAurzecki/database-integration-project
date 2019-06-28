@@ -1,79 +1,45 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.junit.jupiter.api.Test;
+import pl.b2b.aurzecki.pharmacy.exceptions.FilePathExceptions;
 import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ExcelCreatorTest {
+class ExcelCreatorTest {
 
-    List<ExcelDatabaseModel> excelDatabaseModelList;
-    List<String> columnNamesList;
+    private ExcelCreator excelCreator = new ExcelCreator();
+    private static final String PATH = "src/main/resources/ExcelDatabase.xlsx";
+    private static final String FAKE_PATH = "src/main/resoces/Excelabase.xlsx";
 
-    @Mock
-    ExcelCreator excelCreator;
+    @Test
+    public void getDatabaseTest() {
+        List<ExcelDatabaseModel> excelDatabaseModelList = excelCreator.getDatabase(PATH);
+        Assert.assertEquals(4, excelDatabaseModelList.size());
+    }
 
-    @Before
-    public void setUp() {
 
-        excelDatabaseModelList = new ArrayList<>();
-        ExcelDatabaseModel excelDatabaseModel1 = new ExcelDatabaseModel();
-        excelDatabaseModel1.setLp(1L);
-        excelDatabaseModel1.setNazwa("Apap");
-        excelDatabaseModel1.setId_w_ministerstwie(123456789L);
-        excelDatabaseModelList.add(excelDatabaseModel1);
-        ExcelDatabaseModel excelDatabaseModel2 = new ExcelDatabaseModel();
-        excelDatabaseModel2.setLp(2L);
-        excelDatabaseModel2.setNazwa("Apap");
-        excelDatabaseModel2.setId_w_ministerstwie(123456789L);
-        excelDatabaseModelList.add(excelDatabaseModel1);
-        ExcelDatabaseModel excelDatabaseModel3 = new ExcelDatabaseModel();
-        excelDatabaseModel3.setLp(3L);
-        excelDatabaseModel3.setNazwa("Apap");
-        excelDatabaseModel3.setId_w_ministerstwie(123456789L);
-        excelDatabaseModelList.add(excelDatabaseModel1);
-        ExcelDatabaseModel excelDatabaseModel4 = new ExcelDatabaseModel();
-        excelDatabaseModel4.setLp(4L);
-        excelDatabaseModel4.setNazwa("Apap");
-        excelDatabaseModel4.setId_w_ministerstwie(123456789L);
-        excelDatabaseModelList.add(excelDatabaseModel4);
-
-        columnNamesList = new ArrayList<>();
-        columnNamesList.add("lp");
-        columnNamesList.add("nazwa");
-        columnNamesList.add("ministerstwo");
+    @Test
+    public void getDatabaseFailTest() {
+        assertThrows(FilePathExceptions.class, () -> {
+            excelCreator.getDatabase(FAKE_PATH);
+        });
     }
 
     @Test
-    public void getDatabseTest() {
-        String realPath = "src/main/resources/ExcelDatabaseModel.xlsx";
-        when(excelCreator.getDatabase(realPath)).thenReturn(excelDatabaseModelList);
-
-        Assert.assertEquals(excelDatabaseModelList.size(), 4);
+    public void excelTableColumnNamesTest() {
+        List<String> columnNames = excelCreator.excelTableColumnNames(PATH);
+        Assert.assertEquals(columnNames.get(0), "lp");
+        Assert.assertEquals(columnNames.get(1), "nazwa");
     }
 
     @Test
-    public void getDatabseFailTest() {
-        String fakePath = "src/main/resources/ExcelDatab.xl";
-        when(excelCreator.getDatabase(fakePath)).thenThrow(IOException.class);
+    public void excelTableColumnNamesFailTest() {
+        assertThrows(FilePathExceptions.class, () -> {
+            excelCreator.excelTableColumnNames(FAKE_PATH);
+        });
     }
-
-    @Test
-    public void excelTableColumnNamesTest() throws IOException {
-        String realPath = "src/main/resources/ExcelDatabaseModel.xlsx";
-        when(excelCreator.excelTableColumnNames(realPath)).thenReturn(columnNamesList);
-        Assert.assertEquals(columnNamesList.size(), 3);
-    }
-
-
 }

@@ -1,11 +1,10 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.service.H2Creator;
 import pl.b2b.aurzecki.pharmacy.model.H2DatabaseModel;
+import pl.b2b.aurzecki.pharmacy.service.H2Creator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 import java.util.List;
 
 public class ShowH2Table extends JPanel {
@@ -15,15 +14,11 @@ public class ShowH2Table extends JPanel {
     private List<H2DatabaseModel> h2DatabaseModel;
 
 
-    private ShowH2Table(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
+    private ShowH2Table(final String dbUrl, final String dbLogin, final String dbPass) {
         super(new GridLayout(1, 0));
 
         //getting column names for table
-        try {
-            columnNames = h2Creator.h2TableColumnNames(dbUrl, dbLogin, dbPass);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        columnNames = h2Creator.h2TableColumnNames(dbUrl, dbLogin, dbPass);
 
         //getting data from database
         h2DatabaseModel = h2Creator.getH2Database(dbUrl, dbLogin, dbPass);
@@ -49,7 +44,7 @@ public class ShowH2Table extends JPanel {
     }
 
 
-    private static void createAndShowGUI(final String dbUrl, final String dbLogin, final String dbPass) throws ClassNotFoundException {
+    private static void createAndShowGUI(final String dbUrl, final String dbLogin, final String dbPass) {
         //Create and set up the window.
         JDialog dialog = new JDialog();
         dialog.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

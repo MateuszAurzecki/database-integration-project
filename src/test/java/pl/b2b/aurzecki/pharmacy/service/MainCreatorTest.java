@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import pl.b2b.aurzecki.pharmacy.model.MainDatabaseModel;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 class MainCreatorTest {
@@ -13,21 +11,25 @@ class MainCreatorTest {
     MainCreator mainCreator = new MainCreator();
 
     @Test
-    void getMainDatabase() {
+    public void getMainDatabaseTest() {
 
-        List<MainDatabaseModel> mainDatabaseModelList = new ArrayList<>();
-        try {
-            mainDatabaseModelList = mainCreator.getMainDatabase();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        List<MainDatabaseModel> mainDatabaseModelList;
+
+        mainDatabaseModelList = mainCreator.getMainDatabase();
         Assert.assertNotNull(mainDatabaseModelList);
     }
 
     @Test
-    void mainTableColumnNames() throws SQLException, ClassNotFoundException {
+    public void mainTableColumnNamesTest() {
         List<String> columnNames = mainCreator.mainTableColumnNames();
         Assert.assertEquals("ID", columnNames.get(0));
         Assert.assertEquals("NAME", columnNames.get(1));
+    }
+
+    @Test
+    public void mainTableColumnNamesTestFail() {
+        List<String> columnNames = mainCreator.mainTableColumnNames();
+        Assert.assertNotEquals("id", columnNames.get(0));
+        Assert.assertNotEquals("names", columnNames.get(1));
     }
 }

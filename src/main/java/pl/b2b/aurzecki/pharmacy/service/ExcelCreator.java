@@ -5,7 +5,7 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
+import pl.b2b.aurzecki.pharmacy.exceptions.FilePathExceptions;
 import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 
 import java.io.File;
@@ -15,8 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExcelCreator {
-
-    public ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
 
 
     //function mapping excel file table to ExcelDatabaseModel objects and return it as a list of objects
@@ -48,13 +46,13 @@ public class ExcelCreator {
                 result.add(excelDatabaseModel);
             }
         } catch (IOException e) {
-            exceptionsHandler.isExcelFilePathValid(filePath);
+            throw new FilePathExceptions();
         }
         return result;
     }
 
     //function returns list of string with names of columns in table
-    public List<String> excelTableColumnNames(String filePath) throws IOException {
+    public List<String> excelTableColumnNames(String filePath) {
         List<String> result = new ArrayList<>();
 
         File file = new File(filePath);
@@ -66,6 +64,8 @@ public class ExcelCreator {
             for (Cell cell : row) {
                 result.add(cell.getStringCellValue());
             }
+        } catch (IOException e) {
+            throw new FilePathExceptions();
         }
         return result;
     }

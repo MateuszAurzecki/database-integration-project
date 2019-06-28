@@ -1,5 +1,6 @@
 package pl.b2b.aurzecki.pharmacy.service;
 
+import pl.b2b.aurzecki.pharmacy.exceptions.ConnectionExceptions;
 import pl.b2b.aurzecki.pharmacy.model.MainDatabaseModel;
 
 import java.sql.Connection;
@@ -17,12 +18,16 @@ public class MainCreator {
 
     private static final String USER = "sa";
     private static final String PASS = "";
-    String sql = "SELECT * FROM pharmacy";
+    private static final String sql = "SELECT * FROM pharmacy";
 
 
     //function mapping main database table to MainDatabaseModel objects and return it as a list of objects
-    public List<MainDatabaseModel> getMainDatabase() throws ClassNotFoundException {
-        Class.forName(JDBC_DRIVER);
+    public List<MainDatabaseModel> getMainDatabase() {
+        try {
+            Class.forName(JDBC_DRIVER);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         List<MainDatabaseModel> result = new ArrayList<>();
 
 
@@ -42,14 +47,18 @@ public class MainCreator {
                 result.add(data);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ConnectionExceptions();
         }
         return result;
     }
 
     //function returns list of string with names of columns in table
-    public List<String> mainTableColumnNames() throws ClassNotFoundException, SQLException {
-        Class.forName(JDBC_DRIVER);
+    public List<String> mainTableColumnNames() {
+        try {
+            Class.forName(JDBC_DRIVER);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         List<String> result = new ArrayList<>();
         try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -57,8 +66,10 @@ public class MainCreator {
                 ResultSet rs = stmt.executeQuery(sql)) {
             ResultSetMetaData resultSetMetaData = rs.getMetaData();
             for (int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
-                result.add(resultSetMetaData.getColumnName(i+1));
+                result.add(resultSetMetaData.getColumnName(i + 1));
             }
+        } catch (SQLException e) {
+            throw new ConnectionExceptions();
         }
         return result;
     }

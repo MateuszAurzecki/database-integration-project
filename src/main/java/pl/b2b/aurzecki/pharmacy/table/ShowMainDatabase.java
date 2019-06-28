@@ -1,7 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.table;
 
-import pl.b2b.aurzecki.pharmacy.service.MainCreator;
 import pl.b2b.aurzecki.pharmacy.model.MainDatabaseModel;
+import pl.b2b.aurzecki.pharmacy.service.MainCreator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ShowMainDatabase extends JPanel {
 
-    private ShowMainDatabase() throws ClassNotFoundException {
+    private ShowMainDatabase() {
         super(new GridLayout(1, 0));
 
         String[] columnNames = {"id",
@@ -41,7 +41,7 @@ public class ShowMainDatabase extends JPanel {
     }
 
 
-    private static void createAndShowGUI() throws ClassNotFoundException {
+    private static void createAndShowGUI() {
         JFrame frame = new JFrame("Show Main Database");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
@@ -53,7 +53,7 @@ public class ShowMainDatabase extends JPanel {
         frame.setVisible(true);
     }
 
-    public static void getGui() throws ClassNotFoundException {
+    public static void getGui() {
         createAndShowGUI();
     }
 }

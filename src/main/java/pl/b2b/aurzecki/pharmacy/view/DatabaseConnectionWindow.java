@@ -1,10 +1,11 @@
 package pl.b2b.aurzecki.pharmacy.view;
 
+import pl.b2b.aurzecki.pharmacy.errorDialog.ErrorMessageDialog;
+import pl.b2b.aurzecki.pharmacy.service.AddDatabaseToMedicine;
 import pl.b2b.aurzecki.pharmacy.table.ShowExcelTable;
 import pl.b2b.aurzecki.pharmacy.table.ShowH2Table;
 import pl.b2b.aurzecki.pharmacy.table.ShowMySqlTable;
-import pl.b2b.aurzecki.pharmacy.service.AddDatabaseToMedicine;
-import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
+import pl.b2b.aurzecki.pharmacy.validator.Validator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,11 +29,12 @@ public class DatabaseConnectionWindow extends JDialog {
     private JComboBox driverSelection;
     private static final Font fontLabel = new Font("Monospaced", Font.BOLD, 16);
     private static final Font fontButton = new Font("Monospaced", Font.BOLD, 13);
-    private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
+    private ErrorMessageDialog errorMessageDialog = new ErrorMessageDialog();
     private DatabasesMappingWindow databasesMappingWindow;
     private AddDatabaseToMedicine addDatabaseToMedicine = new AddDatabaseToMedicine();
     private PharmacyGui pharmacyGui;
     private ExcelMappingWindow excelMappingWindow;
+    private Validator validator = new Validator();
 
 
     public DatabaseConnectionWindow(JFrame owner) {
@@ -90,8 +92,8 @@ public class DatabaseConnectionWindow extends JDialog {
             String dbUrl = tDbUrl.getText().trim();
             String dbLogin = tLogin.getText().trim();
             String dbPass = tPassword.getText().trim();
-            if (!exceptionsHandler.isDatabaseConnectionFormFilled(dbUrl, dbLogin)) {
-                JOptionPane.showMessageDialog(null, "Wrong database details, please try again", "Error", JOptionPane.ERROR_MESSAGE);
+            if (!validator.isDatabaseConnectionFormFilled(dbUrl, dbLogin)) {
+                errorMessageDialog.wrongDatabaseDetails();
             } else {
                 databasesMappingWindow = new DatabasesMappingWindow(driverSelection.getSelectedItem().toString(), dbUrl, dbLogin, dbPass);
                 this.setVisible(false);
@@ -108,22 +110,19 @@ public class DatabaseConnectionWindow extends JDialog {
             String dbUrl = tDbUrl.getText().trim();
             String dbLogin = tLogin.getText().trim();
             String dbPass = tPassword.getText().trim();
-            if (!exceptionsHandler.isDatabaseConnectionFormFilled(dbUrl, dbLogin)) {
-                JOptionPane.showMessageDialog(null, "Wrong database details, please try again", "Error", JOptionPane.ERROR_MESSAGE);
+            if (!validator.isDatabaseConnectionFormFilled(dbUrl, dbLogin)) {
+                errorMessageDialog.wrongDatabaseDetails();
             } else {
                 if (driverSelection.getSelectedItem().toString().equals("org.h2.Driver")) {
                     try {
                         ShowH2Table.getGui(dbUrl, dbLogin, dbPass);
 
                     } catch (ClassNotFoundException e1) {
-                        exceptionsHandler.connectionError();
+                        errorMessageDialog.connectionError();
                     }
                 } else {
-                    try {
-                        ShowMySqlTable.getGui(dbUrl, dbLogin, dbPass);
-                    } catch (ClassNotFoundException e1) {
-                        exceptionsHandler.connectionError();
-                    }
+                    ShowMySqlTable.getGui(dbUrl, dbLogin, dbPass);
+
                 }
             }
         });
@@ -134,7 +133,7 @@ public class DatabaseConnectionWindow extends JDialog {
         add(bBackToMainMenu);
         bBackToMainMenu.addActionListener(e -> {
             this.setVisible(false);
-            PharmacyGui pharmacyGui = new PharmacyGui();
+            pharmacyGui = new PharmacyGui();
             pharmacyGui.setVisible(true);
 
         });

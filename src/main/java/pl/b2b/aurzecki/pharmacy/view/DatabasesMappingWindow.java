@@ -1,13 +1,11 @@
 package pl.b2b.aurzecki.pharmacy.view;
 
-import pl.b2b.aurzecki.pharmacy.service.H2Creator;
-import pl.b2b.aurzecki.pharmacy.service.MainCreator;
-import pl.b2b.aurzecki.pharmacy.service.MySqlCreator;
 import pl.b2b.aurzecki.pharmacy.service.AddDatabaseToMedicine;
+import pl.b2b.aurzecki.pharmacy.service.H2Creator;
+import pl.b2b.aurzecki.pharmacy.service.MySqlCreator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,6 @@ public class DatabasesMappingWindow extends JDialog {
     private JComboBox mappingTable2;
     private JComboBox mappingTable3;
     private final Font font = new Font("Monospaced", Font.BOLD, 16);
-    private MainCreator mainCreator = new MainCreator();
     private H2Creator h2Creator = new H2Creator();
     private MySqlCreator mySqlCreator = new MySqlCreator();
     private AddDatabaseToMedicine addDatabaseToMedicine = new AddDatabaseToMedicine();
@@ -39,19 +36,10 @@ public class DatabasesMappingWindow extends JDialog {
 
 
         if (driver.equals("org.h2.Driver")) {
-            try {
-                columnNames = h2Creator.h2TableColumnNames(dbUrl, dbLogin, dbPass);
-            } catch (ClassNotFoundException | SQLException e) {
-                ;
-            }
+            columnNames = h2Creator.h2TableColumnNames(dbUrl, dbLogin, dbPass);
         } else if (driver.equals("com.mysql.cj.jdbc.Driver")) {
-            try {
-                columnNames = mySqlCreator.mySqlTableColumnNames(dbUrl, dbLogin, dbPass);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            columnNames = mySqlCreator.mySqlTableColumnNames(dbUrl, dbLogin, dbPass);
         }
-
 
 
         title = new JLabel("Please match columns in databases");

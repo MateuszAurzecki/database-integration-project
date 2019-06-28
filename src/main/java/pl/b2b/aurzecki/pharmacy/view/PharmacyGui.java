@@ -1,8 +1,7 @@
 package pl.b2b.aurzecki.pharmacy.view;
 
-import pl.b2b.aurzecki.pharmacy.table.ShowMainDatabase;
-import pl.b2b.aurzecki.pharmacy.service.AddDatabaseToMedicine;
 import pl.b2b.aurzecki.pharmacy.service.MainTable;
+import pl.b2b.aurzecki.pharmacy.table.ShowMainDatabase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +13,6 @@ public class PharmacyGui extends JFrame {
     private JButton bMainDatabase;
     private JButton bExit;
     private JButton bDeleteMain;
-    private AddDatabaseToMedicine addDatabaseToMedicine = new AddDatabaseToMedicine();
     private MainTable mainTable = new MainTable();
     private DatabaseConnectionWindow databaseConnectionWindow;
     private static final Font font = new Font("Monospaced", Font.BOLD, 12);
@@ -38,11 +36,7 @@ public class PharmacyGui extends JFrame {
         bMainDatabase.setBounds(100, 250, 285, 60);
         add(bMainDatabase);
         bMainDatabase.addActionListener(e -> {
-            try {
-                ShowMainDatabase.getGui();
-            } catch (ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
+            ShowMainDatabase.getGui();
         });
 
 
@@ -75,10 +69,8 @@ public class PharmacyGui extends JFrame {
             System.exit(0);
         });
 
-
         // window closing event :
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
 
         setVisible(true);
     }

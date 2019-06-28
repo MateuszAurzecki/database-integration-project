@@ -14,7 +14,6 @@ public class MainTable {
     private static final String dropTable = "DROP TABLE pharmacy if exists";
 
 
-
     public void deleteAllFromMainDatabase() {
 
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);

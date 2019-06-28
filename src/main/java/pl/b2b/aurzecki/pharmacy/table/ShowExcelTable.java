@@ -2,28 +2,24 @@ package pl.b2b.aurzecki.pharmacy.table;
 
 import pl.b2b.aurzecki.pharmacy.model.ExcelDatabaseModel;
 import pl.b2b.aurzecki.pharmacy.service.ExcelCreator;
-import pl.b2b.aurzecki.pharmacy.exceptions.ExceptionsHandler;
+import pl.b2b.aurzecki.pharmacy.validator.Validator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 import java.util.List;
 
 public class ShowExcelTable extends JPanel {
 
     private ExcelCreator excelCreator = new ExcelCreator();
     private List<String> columnNames;
-    private ExceptionsHandler exceptionsHandler = new ExceptionsHandler();
+    private Validator validator = new Validator();
 
     public ShowExcelTable(final String path) {
         super(new GridLayout(1, 0));
 
         //getting column names for table
-        try {
-            columnNames = excelCreator.excelTableColumnNames(path);
-        } catch (IOException e) {
-            exceptionsHandler.isExcelFilePathValid(path);
-        }
+        columnNames = excelCreator.excelTableColumnNames(path);
+
 
         //getting data from database
         List<ExcelDatabaseModel> excelDatabaseModel = excelCreator.getDatabase(path);

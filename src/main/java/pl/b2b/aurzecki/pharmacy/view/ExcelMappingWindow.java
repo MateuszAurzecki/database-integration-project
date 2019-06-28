@@ -1,11 +1,10 @@
 package pl.b2b.aurzecki.pharmacy.view;
 
-import pl.b2b.aurzecki.pharmacy.service.ExcelCreator;
 import pl.b2b.aurzecki.pharmacy.service.AddDatabaseToMedicine;
+import pl.b2b.aurzecki.pharmacy.service.ExcelCreator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class ExcelMappingWindow extends JDialog {
     private final Font font = new Font("Monospaced", Font.BOLD, 16);
     private ExcelCreator excelCreator = new ExcelCreator();
     private AddDatabaseToMedicine addDatabaseToMedicine = new AddDatabaseToMedicine();
-    private List<String> columnNames = new ArrayList<>();
+    private List<String> columnNames;
     PharmacyGui pharmacyGui = new PharmacyGui();
 
 
@@ -33,11 +32,7 @@ public class ExcelMappingWindow extends JDialog {
         setTitle("Please match data in Tables");
         setLayout(null);
 
-        try {
-            columnNames = excelCreator.excelTableColumnNames(filePath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        columnNames = excelCreator.excelTableColumnNames(filePath);
 
 
         title = new JLabel("Please match columns in databases");
