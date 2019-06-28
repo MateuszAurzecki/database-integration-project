@@ -94,9 +94,9 @@ public class DatabasesMappingWindow extends JDialog {
             matchingList.add(mappingTable2.getSelectedItem().toString());
             matchingList.add(mappingTable3.getSelectedItem().toString());
             if (driver.equals("org.h2.Driver")) {
-                addDatabaseToMedicine.addH2ToMedicine(matchingList, dbUrl, dbPass, dbLogin);
+                addDatabaseToMedicine.addH2ToMedicine(matchingList, dbUrl, dbLogin, dbPass);
             } else if (driver.equals("com.mysql.cj.jdbc.Driver")) {
-                addDatabaseToMedicine.addMySqlToMedicine(matchingList, dbUrl, dbPass, dbLogin);
+                addDatabaseToMedicine.addMySqlToMedicine(matchingList, dbUrl, dbLogin, dbPass);
             }
             pharmacyGui.setVisible(true);
             this.setVisible(false);

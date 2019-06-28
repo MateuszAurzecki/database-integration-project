@@ -1,6 +1,5 @@
 package pl.b2b.aurzecki.pharmacy.view;
 
-import pl.b2b.aurzecki.pharmacy.service.MainTable;
 import pl.b2b.aurzecki.pharmacy.table.ShowMainDatabase;
 
 import javax.swing.*;
@@ -12,8 +11,6 @@ public class PharmacyGui extends JFrame {
     private JButton bDatabaseAddress;
     private JButton bMainDatabase;
     private JButton bExit;
-    private JButton bDeleteMain;
-    private MainTable mainTable = new MainTable();
     private DatabaseConnectionWindow databaseConnectionWindow;
     private static final Font font = new Font("Monospaced", Font.BOLD, 12);
     private static final Font fontLabel = new Font("Monospaced", Font.BOLD, 16);
@@ -39,14 +36,6 @@ public class PharmacyGui extends JFrame {
             ShowMainDatabase.getGui();
         });
 
-
-        bDeleteMain = new JButton("Clear Main Database");
-        bDeleteMain.setFont(font);
-        bDeleteMain.setBounds(10, 600, 285, 40);
-        add(bDeleteMain);
-        bDeleteMain.addActionListener(e -> {
-            mainTable.deleteAllFromMainDatabase();
-        });
 
 
         bDatabaseAddress = new JButton("Add new Database");
